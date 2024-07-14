@@ -1,37 +1,19 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const props = defineProps({
-  count: {
-    default: 0,
+<script>
+export default {
+  props: {
+    count: {
+      type: Number,
+      default: 0,
+    },
   },
-})
-
-const counter = ref(props.count)
+  data: function () { return {counter: this.count } }
+}
 </script>
 
 <template>
-  <div flex="~" w="min" border="~ main rounded-md">
-    <button
-      border="r main"
-      p="2"
-      font="mono"
-      outline="!none"
-      hover:bg="gray-400 opacity-20"
-      @click="counter -= 1"
-    >
-      -
-    </button>
-    <span m="auto" p="2">{{ counter }}</span>
-    <button
-      border="l main"
-      p="2"
-      font="mono"
-      outline="!none"
-      hover:bg="gray-400 opacity-20"
-      @click="counter += 1"
-    >
-      +
+  <div class="ml-4">
+    <button class="border rounded px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800" @click="counter++">
+      Count is: {{ counter }}
     </button>
   </div>
 </template>
