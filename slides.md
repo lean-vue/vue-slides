@@ -20,3 +20,7 @@ mdc: true
 <div class="opacity-75">
 Willkommen bei Ihrer Vue.js Schulung!
 </div>
+
+---
+src: pages/about-me.md
+---
